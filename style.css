@@ -1,1 +1,44 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f1220;
+  color: #eaeaf0;
+}
 
+.container {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #9aa0ff;
+  margin-bottom: 3rem;
+}
+
+.projects {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #1a1d35;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+a {
+  color: #8da2ff;
+  text-decoration: none;
+}
