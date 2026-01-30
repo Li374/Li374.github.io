@@ -1,7 +1,7 @@
 :root {
   /* 背景 */
-  --bg-main: #fff3e4;        /* 暖米白 */
-  --bg-card: #ffffff;
+  --bg-main: #1a1411;
+  --bg-card: #241b16;
 
   /* 主色 */
   --orange-main: #f26a2e;    /* 明亮橙 */
@@ -9,8 +9,8 @@
   --red-accent: #e2433f;     /* 一点点红 */
 
   /* 文字 */
-  --text-main: #3b2418;
-  --text-sub: #7b4b34;
+  --text-main: #af6442;
+  --text-sub: #af6442;
 
   /* 其他 */
   --border-soft: #f2dcc8;
@@ -24,11 +24,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "PingFang SC", "Hiragino Sans", sans-serif;
-  background: radial-gradient(
-    circle at top,
-    #fff8f1 0%,
-    var(--bg-main) 60%
-  );
+  background: var(--bg-main);
   color: var(--text-main);
 }
 
@@ -76,7 +72,7 @@ h1 {
 }
 
 .card:hover {
-  transform: translateY(-8px) rotate(-0.3deg);
+  transform: translateY(-8px);
   box-shadow:
     0 24px 50px rgba(242, 106, 46, 0.22),
     0 8px 20px rgba(226, 67, 63, 0.14);
