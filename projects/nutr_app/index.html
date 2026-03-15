@@ -12,7 +12,9 @@
 
     <h1>Daily Nutrition Checker</h1>
     <p class="subtitle">
-      A Data-Driven Nutrition Analysis Web Application
+      <b style="font-weight: bold;">
+        A Data-Driven Nutrition Analysis Web Application with ML inference
+      </b>
     </p>
 
 
@@ -21,9 +23,7 @@
       <!-- Project Overview -->
       <h2>Overview</h2>
       <p>
-        <b style="font-weight: bold;">Daily Nutrition Checker</b> is a data-driven web application built with <b style="font-weight: bold;">Flask</b>
-        and deployed on <b style="font-weight: bold;">Render</b>. AI-assisted code generation was used as a development
-        tool to design and implement the application logic.
+        <b style="font-weight: bold;">Daily Nutrition Checker</b> is a <b style="font-weight: bold;">Flask-based web application with ML inference</b>, deployed using Docker and Hugging Face Spaces.
       </p>
       <p>
         The application transforms daily food intake data into <b style="font-weight: bold;">structured nutritional
@@ -74,6 +74,7 @@
       <!-- Data & Methodology -->
       <br>
       <h2>Data & Methodology</h2>
+
       <p>Nutritional calculations are based on:</p>
       <ul>
         <li><b style="font-weight: bold;">
@@ -83,36 +84,115 @@
           Standard Tables of Food Composition in Japan (2015)
         </b></li>
       </ul>
+
       <p>
         Food composition data and reference values are organized into
         normalized datasets.
       </p>
 
-
-      <!-- Technical Highlights -->
-      <h2>Technical Highlights</h2>
+      <p>Modular project structure separating:</p>
       <ul>
-        <li>Modular project structure separating:
-          <ul>
-            <li><b style="font-weight: bold;">
-              Data loading
-            </b></li>
-            <li><b style="font-weight: bold;">
-              Nutritional calculations
-            </b></li>
-            <li><b style="font-weight: bold;">
-              Evaluation logic
-            </b></li>
-            <li><b style="font-weight: bold;">
-              Presentation layer
-            </b></li>
-          </ul>
+        <li><b style="font-weight: bold;">
+          Data loading
+        </b></li>
+        <li><b style="font-weight: bold;">
+          Nutritional calculations
+        </b></li>
+        <li><b style="font-weight: bold;">
+          Evaluation logic
+        </b></li>
+        <li><b style="font-weight: bold;">
+          Presentation layer
+        </b></li>
+      </ul>
+
+      <p>Data-driven logic with explicit calculation and comparison rules</p>
+
+
+      <!-- Machine Learning Model -->
+      <h2>Machine Learning Model</h2>
+
+      <p>
+        To simplify food logging, a computer vision model was integrated to automatically
+        recognize food categories and estimate portion size from images.
+      </p>
+
+      <!-- ML Training pipeline -->
+      <div class="app-preview">
+        <img src="images/ml_pipeline.png" alt="App overview screenshot">
+      </div>
+
+      <br>
+      <p>
+        The model was trained on the <b style="font-weight: bold;">ECUST Food Dataset (ECUSTFD)</b>,
+        which contains multi-angle food images with reference objects for size estimation.
+        The model predicts <b style="font-weight: bold;">13 food categories</b> and estimates
+        <b style="font-weight: bold;">portion weight</b>.
+      </p>
+
+      <p>
+        Training performance on the dataset achieved approximately
+        <b style="font-weight: bold;">99% accuracy</b> for food category recognition
+        and a portion estimation <b style="font-weight: bold;">MAE of 24 g</b>.
+      </p>
+
+
+      <h3>Current Limitations</h3>
+      <ul>
+        <li>
+          Portion estimation based on image area is inherently noisy.
+          Even when reference objects such as coins or plates are present,
+          estimating weight from inferred volume can be inaccurate.
+          For example, in the ECUSTFD dataset, apples with similar volumes
+          (~300 cm³) have weights ranging from 234 g to 255 g.
         </li>
-        <li>Data-driven logic with explicit calculation and comparison rules</li>
+
+        <li>
+          Although the ECUSTFD dataset includes multiple viewing angles and
+          reference objects, the visual scenes are relatively simple.
+          As a result, the model performs well during training but shows
+          lower accuracy when applied to real-world images with more
+          complex backgrounds or mixed dishes, indicating limited
+          generalization ability.
+        </li>
       </ul>
 
 
-    <!-- Demo / Visuals -->
+      <h3>Future Development</h3>
+
+      <p><b style="font-weight: bold;">● Application Improvements</b></p>
+      <ul>
+        <li>
+          When prediction confidence is below 80%, provide the top three
+          predicted food categories for user selection.
+        </li>
+        <li>
+          Extend nutritional analysis to support infants and children
+          under 6 years old.
+        </li>
+        <li>
+          Add multilingual support for broader accessibility.
+        </li>
+      </ul>
+
+      <p><b style="font-weight: bold;">● Machine Learning Directions</b></p>
+      <ul>
+        <li>
+          Automatically generate daily dietary summaries and nutritional
+          recommendations based on the analyzed intake data.
+        </li>
+
+        <li>
+          Ingredient-level recognition: identify ingredients within a dish
+          and estimate their relative proportions. This would enable more
+          accurate nutrition estimation by combining ingredient detection
+          with regional food composition tables and Dietary Reference
+          Intakes (DRIs).
+        </li>
+      </ul>
+
+
+      <!-- Demo / Visuals -->
       <h2>Demo & Visuals</h2>
 
       <!-- 图片 / GIF 展示占位 -->
@@ -121,10 +201,23 @@
       </div>
       
       <br>
-      <a href="https://nutr-app.onrender.com/" target="_blank">
+      <a href="https://huggingface.co/spaces/ekxx/nutr_app" target="_blank">
         Open Live Demo ›
       </a>
 
+
+      <br><br>
+      <!-- Acknowledgements -->
+      <h3>Acknowledgements</h3>
+      <ul>
+        <li>
+          The authors of the ECUST Food Dataset for providing the dataset
+          used in model training.
+        </li>
+        <li>
+          The creator of the small robot icon used in the interface.
+        </li>
+      </ul>
     </section>
 
 
