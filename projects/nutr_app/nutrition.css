@@ -1,3 +1,11 @@
+/* 容器居中 */
+.app-preview {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* 展示图片 */
 .app-preview img {
   width: 100%;
   display: block;
@@ -22,4 +30,60 @@
   box-shadow:
     inset 0 0 0 1px rgba(247, 163, 106, 0.22),
     0 12px 28px rgba(242, 106, 46, 0.18);
+}
+
+
+/* 展示视频 */
+.app-preview video {
+  width: 50%;
+
+  border-radius: 14px;
+  border: 1px solid rgba(242, 106, 46, 0.35);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(247, 163, 106, 0.18),
+    0 8px 20px rgba(242, 106, 46, 0.12);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.app-preview video:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(247, 163, 106, 0.22),
+    0 12px 28px rgba(242, 106, 46, 0.18);
+}
+
+
+/* 代码块 */
+.code-block {
+  background: #1f1713; /* 比卡片稍微深一点，形成层次 */
+  color: var(--text-main);
+
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  overflow-x: auto;
+
+  /* 边框：暖色柔和 */
+  border: 1px solid rgba(242, 106, 46, 0.25);
+
+  /* 阴影：和卡片统一风格 */
+  box-shadow:
+    inset 0 0 0 1px rgba(247, 163, 106, 0.12),
+    0 6px 16px rgba(242, 106, 46, 0.10);
+
+  transition: all 0.2s ease;
+}
+
+.code-block:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(247, 163, 106, 0.18),
+    0 10px 22px rgba(242, 106, 46, 0.16);
 }

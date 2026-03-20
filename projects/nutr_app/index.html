@@ -109,6 +109,38 @@
       <p>Data-driven logic with explicit calculation and comparison rules</p>
 
 
+      <!-- Project Structure -->
+      <br>
+      <h2>Architecture & Project Structure</h2>
+
+      <p>
+      The system is designed with a modular architecture, enabling flexible
+      integration of data processing, rule-based evaluation, and machine learning components.
+      </p>
+
+      <pre class="code-block">
+      nutr_app/
+      ├── src/
+      │   ├── calculations/      # Nutrition calculation modules
+      │   ├── data_loader.py     # Load structured datasets
+      │   ├── model.py           # ML model definition & inference
+      │   ├── nutr_app.py        # Flask application entry point
+      │   ├── rules.py           # Nutrition evaluation rules
+      │   ├── static/            # Frontend assets (JS/CSS/images)
+      │   └── templates/         # HTML templates
+      ├── data/                  # Processed nutrition datasets
+      ├── notebooks/             # Data cleaning & exploration
+      ├── model.weights.h5       # Trained model
+      └── requirements.txt       # Dependencies
+      </pre>
+
+      <p>
+      This structure ensures clear separation between data processing,
+      model inference, and application logic, making the system easier to
+      maintain and extend.
+      </p>
+
+
       <!-- Machine Learning Model -->
       <h2>Machine Learning Model</h2>
 
@@ -195,13 +227,22 @@
       <!-- Demo / Visuals -->
       <h2>Demo & Visuals</h2>
 
-      <!-- 图片 / GIF 展示占位 -->
+      <!-- video1 -->
+      <h3>Demo Video</h3>
+
+      <p>
+      A short demo showing real-time nutrition analysis and ML-based food recognition.
+      </p>
+
       <div class="app-preview">
-        <img src="images/pic3.png" alt="App overview screenshot">
+        <video controls>
+          <source src="images/video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
       
       <br>
-      <a href="https://huggingface.co/spaces/ekxx/nutr_app" target="_blank">
+      <a href="https://huggingface.co/spaces/Li374/nutr_app" target="_blank">
         Open Live Demo ›
       </a>
 
